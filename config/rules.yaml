@@ -1,0 +1,6 @@
+service: rlm-deploy
+port: 8795
+kix:
+  base_url: http://localhost:8800
+database:
+  url: sqlite:///data/rlm-deploy.sqlite
