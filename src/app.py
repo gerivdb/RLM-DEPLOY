@@ -67,6 +67,12 @@ def rollback():
     if not deployment:
         return jsonify({"error": "deployment not found"}), 404
 
+    service_name = deployment.get("service")
+    try:
+        requests.post(f"{KIX_BASE_URL}/runners/{service_name}/stop", timeout=5)
+    except requests.RequestException:
+        pass
+
     deployment["status"] = "rolled_back"
     return jsonify({"id": deploy_id, "status": deployment["status"]}), 200
 
