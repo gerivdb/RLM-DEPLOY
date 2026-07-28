@@ -14,6 +14,12 @@ def health():
     return jsonify({"status": "ok", "service": "rlm-deploy"}), 200
 
 
+@app.get("/healthz")
+def healthz():
+    """Health check endpoint for KIX orchestrator."""
+    return jsonify({"status": "ok"}), 200
+
+
 @app.get("/metrics")
 def metrics():
     return jsonify({
