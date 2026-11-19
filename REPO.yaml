@@ -1,0 +1,5 @@
+name: RLM-DEPLOY
+stratum: L2-PLATFORM
+profile: citizen
+wal_reference: "0x243"
+description: Déploiement causal pour le moteur RLM
