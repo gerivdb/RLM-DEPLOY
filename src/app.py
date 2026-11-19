@@ -2,6 +2,14 @@ from flask import Flask, jsonify, request
 import os
 import requests
 
+from rlm_common import (
+    causal_validator,
+    curriculum_validator,
+    meta_coherence_fixer,
+    narrative_generator,
+    rootx_client,
+)
+
 app = Flask(__name__)
 
 KIX_BASE_URL = os.environ.get("KIX_BASE_URL", "http://localhost:8800")
